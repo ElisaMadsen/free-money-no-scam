@@ -10,7 +10,7 @@ public class EmailRepository {
     public static void connectToDB() {
         try {
             String url = "jdbc:mysql://localhost:3306/free_money";
-            con = DriverManager.getConnection(url, "root", "MySQL!123");
+            con = DriverManager.getConnection(url, "root", "");
 
             System.out.println("Ok, we have a connection.");
 
