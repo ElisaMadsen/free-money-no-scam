@@ -36,4 +36,10 @@ public class IndexController {
             return "emailnotregistered";
         }
     }
+
+    @PostMapping("/EmailFetch")
+    public String emailFetched(WebRequest dataFromForm) throws SQLException {
+
+        return "emailfetch";
+    }
 }
