@@ -15,5 +15,17 @@
                 <input type="submit">
             </form>
     </section>
+
+    <div class="clickhere">
+    <form method="post" action="index.html">
+        <label for="email">Click Here!</label>
+        <input type="button">
+    </form>
+    </div>
+
+    <p th:each="email : ${fetchedemail}">
+        <span th:text="${fetchedemail}"></span>
+
+    </p>
 </body>
 </html>

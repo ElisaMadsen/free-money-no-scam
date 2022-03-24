@@ -9,7 +9,7 @@ public class DatabaseConnect {
     public static void connectDB() {
         try {
             String url = "jdbc:mysql://localhost:3306/free_money";
-            con = DriverManager.getConnection(url, "root", "password");
+            con = DriverManager.getConnection(url, "root", "MySQL!123");
 
             System.out.println("Ok, we have a connection.");
 

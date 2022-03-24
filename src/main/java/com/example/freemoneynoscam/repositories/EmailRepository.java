@@ -10,7 +10,7 @@ public class EmailRepository {
     public static void connectToDB() {
         try {
             String url = "jdbc:mysql://localhost:3306/free_money";
-            con = DriverManager.getConnection(url, "root", "password");
+            con = DriverManager.getConnection(url, "root", "MySQL!123");
 
             System.out.println("Ok, we have a connection.");
 
@@ -19,38 +19,25 @@ public class EmailRepository {
             e.printStackTrace();
         }
     }
-/*
+
     public static String fetchSingleEmail() throws SQLException {
+            String printedEmail = "";
+            stmt = con.createStatement();
 
-        Statement stmt = con.createStatement();
-        String sqlGetLastId = "SELECT MAX(iduser_emails) FROM user_email;";
-        rs = stmt.executeQuery(sqlGetLastId);
+            String getValues = "SELECT * from user_emails";
 
-        String sqlString = "SELECT * FROM user_email WHERE iduser_emails=" + ";";
-        rs = stmt.executeQuery(sqlString);
-        return "";
+            rs = stmt.executeQuery(getValues);
 
+            while(rs.next())
+            {
+                String email= rs.getString("email");
+
+                System.out.println("\tEmail = " + email);
+            }
+            return printedEmail;
+        }
     }
 
- */
-}
 
-
-    /*
-    public static void fetchEmail(){
-
-        try{
-
-        stmt = con.createStatement();
-
-        String getValues = "SELECT * FROM user_emails WHERE iduser_emails";
-
-    } catch (SQLException e){
-            e.printStackTrace();
-        }
-
-        }
-
-     */
 
 

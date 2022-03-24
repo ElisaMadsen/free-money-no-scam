@@ -16,7 +16,11 @@ public class IndexController {
     ValidateEmailService service = new ValidateEmailService();
 
     @GetMapping("/")
-    public String index() {
+    public String index(Model dataToView) throws SQLException {
+        DatabaseConnect.connectDB();
+        EmailRepository.connectToDB();
+        String emailFetch = EmailRepository.fetchSingleEmail();
+        dataToView.addAttribute("fetchedemail", emailFetch);
         return "index";
     }
 
@@ -32,16 +36,4 @@ public class IndexController {
             return "emailnotregistered";
         }
     }
-/*
-    @GetMapping("/emailfetch")
-    public String emailFetch(Model dataToView) throws SQLException {
-        String emailFetch = EmailRepository.fetchSingleEmail();
-        DatabaseConnect.connectDB();
-        EmailRepository.connectToDB();
-
-        dataToView.addAttribute("emailpost", emailFetch);
-        return "emailfetch";
-    }
-
- */
 }
